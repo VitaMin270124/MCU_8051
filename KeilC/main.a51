@@ -1,5 +1,5 @@
 ORG 0000H
-	LJMP START        ; Nh?y d?n chuong trình chính
+	LJMP START        
 ORG 0030H
 
 col1		bit P2.0
@@ -20,16 +20,16 @@ COL		equ		3Ch
 RS      EQU P1.0
 RW      EQU P1.1
 EN      EQU P1.2
-PORT    EQU P3        ; D4–D7 n?i vào P3.4–P3.7
+PORT    EQU P3        ; D4â€“D7 noi vÃ o P3.4â€“P3.7
 
 START:
-    mov so1, #0
-    mov so2, #0
-    mov dau, #0
-	mov index,#0
-    ACALL LCD_INIT      ; ? Ch? g?i 1 l?n khi b?t d?u
+mov so1, #0
+mov so2, #0
+mov dau, #0
+mov index,#0
+ACALL LCD_INIT      
     
-	SJMP MAIN           ; Nh?y vào vòng l?p chính
+SJMP MAIN           
 	
 MAIN:
 
@@ -267,39 +267,39 @@ SJMP DONE1
 
 ;-----------------------
 LCD_INIT:
-	MOV A,#00H
-	ACALL LCD_CMD_4
-	MOV A,#03H
-	ACALL LCD_CMD_4
-    MOV A,#02H         ; Kh?i t?o ch? d? 4-bit
-    ACALL LCD_CMD_4
-    MOV A,#28H         ; 4-bit, 2 dòng, font 5x7
-    ACALL LCD_CMD
-    MOV A,#0CH         ; Hi?n th? ON, t?t con tr?
-    ACALL LCD_CMD
-    MOV A,#06H         ; T? d?ng tang, không d?ch màn hình
-    ACALL LCD_CMD
-    MOV A,#01H         ; Xóa màn hình
-    ACALL LCD_CMD
-    RET
+MOV A,#00H
+ACALL LCD_CMD_4
+MOV A,#03H
+ACALL LCD_CMD_4
+MOV A,#02H         ; Kh?i t?o ch? d? 4-bit
+ACALL LCD_CMD_4
+MOV A,#28H         ; 4-bit, 2 dÃ²ng, font 5x7
+ACALL LCD_CMD
+MOV A,#0CH         ; Hien thi ON, tat con tro
+ACALL LCD_CMD
+MOV A,#06H         ; T? d?ng tang, khÃ´ng d?ch mÃ n hÃ¬nh
+ACALL LCD_CMD
+MOV A,#01H         ; XÃ³a mÃ n hÃ¬nh
+ACALL LCD_CMD
+RET
 
 ;-----------------------
 LCD_CMD:
-    CLR RS
-    CLR RW
-    ACALL SEND_4BIT
-	ACALL SHORT_DELAY
-    RET
+CLR RS
+CLR RW
+ACALL SEND_4BIT
+ACALL SHORT_DELAY
+RET
 
 LCD_DATA:
-    SETB RS
-    CLR RW
-    ACALL SEND_4BIT
-	ACALL SHORT_DELAY
-    RET
+SETB RS
+CLR RW
+ACALL SEND_4BIT
+ACALL SHORT_DELAY
+RET
 
 SEND_4BIT:
-    MOV R0, A         ; ? Luu b?n g?c A (8-bit c?n g?i)x
+    MOV R0, A         ; ? Luu ban goc A (8-bit can gui)
 
     ; G?i nibble cao
     ANL A, #0F0H
@@ -314,7 +314,7 @@ SEND_4BIT:
     ACALL DELAYLCD
 
     ; G?i nibble th?p
-    MOV A, R0         ; ? L?y l?i b?n g?c
+    MOV A, R0         ; ? Lay lai ban goc
     SWAP A
     ANL A, #0F0H
     MOV R1, A
@@ -329,7 +329,7 @@ SEND_4BIT:
     RET
 
 LCD_CMD_4:
-    ; Dùng d? kh?i t?o 4-bit (ch? g?i nibble cao)
+    ; DÃ¹ng de khoi tao 4-bit (chi gui nibble cao)
 	clr RS
 	clr RW
 	SWAP A
@@ -352,14 +352,14 @@ D1: MOV R1,#255
 D2: DJNZ R1,D2
     DJNZ R2,D1
     RET
-SHORT_DELAY:
+SHORT_DELAY:  						; delay ngan cho xung En LCD
     MOV R7, #10   
 SD_LOOP:
     DJNZ R7, SD_LOOP
     RET
 ;-----------------------
 
-delay:                                            			;CHUONG TRINH CON DELAY 500MS
+delay:                                            	;CHUONG TRINH CON DELAY 500MS
 MOV TMOD,#10H
 MOV R7,#10
 LOOP:
