@@ -1,3 +1,0 @@
-".\Objects\main.obj" 
-TO ".\Objects\DoAn" 
-PRINT(".\Listings\DoAn.m51")
