@@ -4,10 +4,10 @@
 - Trừ (−)
 - Nhân (×)
 - Chia (÷)
-# 📦 Thành Phần Phần Cứng
+## 📦 Thành Phần Phần Cứng
 Vi điều khiển 8051 là một trong những dòng vi điều khiển 8-bit phổ biến nhất được sử dụng trong hệ thống nhúng, tự động hóa, thiết bị điện tử và các ứng dụng nhúng nhỏ gọn. Nó được phát triển lần đầu tiên bởi Intel vào năm 1980, và đến nay có nhiều biến thể được sản xuất bởi các hãng như Atmel (nay là Microchip), STC, Nuvoton, Silicon Labs,…
 
-## Các thành phần
+### Các thành phần
 | Thiết Bị           | Mô Tả                                       |
 | ------------------ | ------------------------------------------- |
 | Vi điều khiển 8051 | Dùng AT89S52 hoặc tương đương               |
@@ -16,14 +16,14 @@ Vi điều khiển 8051 là một trong những dòng vi điều khiển 8-bit p
 | Điện trở, dây nối  | Cho kết nối các linh kiện                   |
 | Breadboard / PCB   | Gắn mạch                                    |
 
-## Tần số
+### Tần số
 - 12 MHz Crystal Oscillator
-# 🔌 Sơ Đồ Kết Nối
-## Kết Nối Keypad 4x4
+## 🔌 Sơ Đồ Kết Nối
+### Kết Nối Keypad 4x4
 Keypad có 8 chân: 4 hàng (R1–R4), 4 cột (C1–C4)
 
 Kết nối các chân keypad với các chân GPIO của vi điều khiển (ví dụ: P2.0–P2.7)
-## Kết Nối LCD 16x2 (Chế độ 4-bit)
+### Kết Nối LCD 16x2 (Chế độ 4-bit)
 RS → P1.0
 
 RW → P1.1
@@ -40,7 +40,7 @@ D7 → P3.7
 
 VSS → GND, VDD → 5V, VO → chiết áp điều chỉnh độ tương phản
 
-# 🧾 Nguyên Lý Hoạt Động
+## 🧾 Nguyên Lý Hoạt Động
 1. Người dùng nhập số và toán tử thông qua keypad (VD: 1, +, 2, =)
 
 2. Vi điều khiển đọc và xử lý tín hiệu từ keypad
@@ -49,14 +49,14 @@ VSS → GND, VDD → 5V, VO → chiết áp điều chỉnh độ tương phản
 
 4. Hỗ trợ nhập tối đa 2 số và 1 phép toán mỗi lần tính
 
-# 🛠 Công Cụ Phát Triển
+## 🛠 Công Cụ Phát Triển
 Keil uVision: Biên dịch mã assembly thành file hex cho 8051
 
 Proteus: Mô phỏng mạch (keypad, LCD, 8051)
 
 STC-ISP hoặc USBASP: Nạp code vào vi điều khiển thực tế
 
-# 📚 Tham Khảo
+## 📚 Tham Khảo
 [Tài liệu vi điều khiển 8051 của Intel](https://www.alldatasheet.com/view.jsp?Searchword=At89s52&gad_source=1&gad_campaignid=170327939&gbraid=0AAAAADcdDU-NQS6BKdJsWmEn4WiOAVgIA&gclid=Cj0KCQjw0erBBhDTARIsAKO8iqRABw4MM1R34fyiPTWJ92ijF3yuD07OgrMnrm-s3OCnfmoTCoslpCkaAlOzEALw_wcB)
 
 
