@@ -5,6 +5,9 @@
 - Nhân (×)
 - Chia (÷)
 # 📦 Thành Phần Phần Cứng
+Vi điều khiển 8051 là một trong những dòng vi điều khiển 8-bit phổ biến nhất được sử dụng trong hệ thống nhúng, tự động hóa, thiết bị điện tử và các ứng dụng nhúng nhỏ gọn. Nó được phát triển lần đầu tiên bởi Intel vào năm 1980, và đến nay có nhiều biến thể được sản xuất bởi các hãng như Atmel (nay là Microchip), STC, Nuvoton, Silicon Labs,…
+
+## Các thành phần
 | Thiết Bị           | Mô Tả                                       |
 | ------------------ | ------------------------------------------- |
 | Vi điều khiển 8051 | Dùng AT89S52 hoặc tương đương               |
@@ -13,6 +16,8 @@
 | Điện trở, dây nối  | Cho kết nối các linh kiện                   |
 | Breadboard / PCB   | Gắn mạch                                    |
 
+## Tần số
+- 12 MHz Crystal Oscillator
 # 🔌 Sơ Đồ Kết Nối
 ## Kết Nối Keypad 4x4
 Keypad có 8 chân: 4 hàng (R1–R4), 4 cột (C1–C4)
