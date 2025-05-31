@@ -50,7 +50,7 @@ VSS → GND, VDD → 5V, VO → chiết áp điều chỉnh độ tương phản
 4. Hỗ trợ nhập tối đa 2 số và 1 phép toán mỗi lần tính
 
 # 🛠 Công Cụ Phát Triển
-Keil uVision: Biên dịch mã C cho 8051
+Keil uVision: Biên dịch mã assembly thành file hex cho 8051
 
 Proteus: Mô phỏng mạch (keypad, LCD, 8051)
 
